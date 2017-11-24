@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KS</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="http://at.alicdn.com/t/font_pgg5jafnob51m7vi.css ">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+            font-size: 100px;
+        }
+        #root{
+            height: 100%;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<div id="root">
+
+</div>
+</body>
+</html>
+<script type="text/javascript">
+    console.log(window.getComputedStyle(document.body).fontSize);
+    //字体大小：默认值是16px，每一个浏览器有可能不一样的
+    var dW = 640; //设计稿的宽
+    //在移动端就直接这样写就可以
+    //document.documentElement.style.fontSize = 100 / (dW / (document.documentElement.clientWidth || document.body.clientWidth) ) + "px";
+
+    //在PC端的时候加上屏幕大小改变的问题
+    window.onresize = function() {
+        document.documentElement.style.fontSize =100 / (dW/ (document.documentElement.clientWidth || document.body.clientWidth) ) + "px";
+    }
+</script>
