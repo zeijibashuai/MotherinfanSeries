@@ -6,12 +6,13 @@ import './index.less'
 import action from '../../../store/actions/list'
 @connect(state=>state.list,action)
 export default class Yinsi extends Component {
-    constructor(){
-        super();
-        this.state={img:[]}
+    constructor(e){
+        super(e);
+        this.state={img:[],e}
     }
     componentDidMount(){
         this.props.is();
+        console.log(this.state.e,8888888888);
     }
     ckk=()=>{
         this.setState({

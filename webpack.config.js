@@ -32,7 +32,7 @@ module.exports={
     ],
     devtool:'cheap-module-source-map',   // 报错好找
     devServer: {
-        host: 'localhost',
+        host: '0.0.0.0',
         port: '8080',
         proxy: [
             {
