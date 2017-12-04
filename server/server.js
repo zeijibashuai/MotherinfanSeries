@@ -34,7 +34,7 @@ app.get('/getItem',function (req,res) {
 
 app.post('/up',function (req,res) {
       let user=req.body;
-
+     user.main=[];
     let oldUser = users.find(item=>item.username == user.username);
     if(!(/^1[34578]\d{9}$/.test(user.username))){
         res.json({code:1,error:'用户名必定为正确手机号!'});
@@ -77,7 +77,6 @@ app.post('/out',function(req,res) {
 });
 app.post('/cimg',function(req,res) {
     let user = req.body;
-    console.log(user,7894562);
     let oldUser = users.find(item=>item.username == user.username);
     console.log(oldUser,555555555555555555);
     oldUser.img=user.img;
@@ -91,14 +90,26 @@ app.post('/cimg',function(req,res) {
 
 app.get('/is',function(req,res) {
     let is=req.session.user;
-   if(is){
-       let cc={code:0}
-       let qwer= Object.assign({},is,cc);
+    if(is){
+        let oldjiuju=users.find(item=>is.username == item.username);
+        let cc={code:0};
+       let qwer= Object.assign({},oldjiuju,cc);
        console.log(qwer);
        res.json(qwer)
    }else{
        res.json({code:1,username:''})
    }
+});
+
+app.post('/jiuju',function(req,res) {
+    let main = req.body;
+    console.log(main,'ccccccccccccccccc');
+    let is=req.session.user;
+
+        let oldjiuju=users.find(item=>is.username == item.username);
+        oldjiuju.main.push(main);
+        console.log(oldjiuju,'rrrrrrrrrrrrrrrrrrrrrrrrrrrrrr');
+        res.json(oldjiuju)
 
 });
 

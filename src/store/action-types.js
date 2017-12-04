@@ -7,3 +7,4 @@ export const OOUT = 'OOUT';
 export const OOUTT = 'OOUTT';
 export const CIMG = 'CIMG';
 export const IS = 'IS';
+export const UPD = 'UPD';
