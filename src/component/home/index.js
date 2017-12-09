@@ -26,7 +26,7 @@ export default class Home extends Component{
         return(
           <div>
 
-            <Homeheader home={this.state.home} asd={this.asd}/>
+            <Homeheader user={this.props.user} home={this.state.home} asd={this.asd}/>
                   {this.state.home==1?<H1 fn={this.props.getItem} f={this.props.home.flag} item={this.props.home.item} imglist={this.props.home.list}/>:this.state.home==2?<h1>b</h1>:this.state.home==3?<h1>SB</h1>:<h1>kkk</h1>}
 
           </div>

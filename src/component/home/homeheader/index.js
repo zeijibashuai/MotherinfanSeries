@@ -35,7 +35,7 @@ export default class Homeheader extends Component {
             <div className="homeheader">
                 <div className="headerh">
                     <div className="headerimg">
-                        <img src="https://gss1.bdstatic.com/-vo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike116%2C5%2C5%2C116%2C38/sign=005e5fcd9aef76c6c4dff379fc7f969f/9358d109b3de9c8234db74636681800a18d843a4.jpg" alt="" />
+                        <img src={this.props.user.img} alt="" />
                     </div>
                 </div>
                 <div className="aaa">
